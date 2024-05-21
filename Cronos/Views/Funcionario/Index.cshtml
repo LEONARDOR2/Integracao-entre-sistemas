@@ -1,0 +1,89 @@
+﻿
+@model List<FuncionarioModel>
+
+
+
+@{
+    ViewData["Title"] = "Lista de cadastro";
+}
+ 
+
+<div
+    class="text-center"> 
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close" >X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+    }
+
+    
+    @if (TempData["MensagemErro"] != null)
+    {
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+    </div>
+    }
+
+    <br />
+    
+    <div class="p-3 mb-2 bg-primary text-white">  Lista de funcionários</div>
+    <br />
+
+    
+
+    <table class="table table-striped" id="table-funcionarios">
+        <thead>
+
+            <tr>
+
+                <th scope="col"># </th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Pis</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Telefone</th>
+                <th scope="col"></th>
+            </tr>                                             
+        </thead>
+        <tbody>
+           @if(Model != null && Model.Any())
+            {
+                
+                foreach (FuncionarioModel funcionario in Model)
+                {
+                    <tr>
+                        <th scope="row">@funcionario.Id</th>
+                        <td>@funcionario.Nome</td>
+                        <td>@funcionario.Email</td>
+                        <td>@funcionario.Pis</td>
+                        <td>@funcionario.Referencia</td>
+                        <td>@funcionario.Telefone</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <a role="button" class="btn btn-warning" asp-route-id="@funcionario.Id" asp-controller="Funcionario" asp-action="Editar">
+                                    Editar
+                                </a>
+
+                                <a role="button" class="btn btn-danger" asp-route-id="@funcionario.Id" asp-controller="Funcionario" asp-action="ApagarConfirmacao">Deletar</a>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            }
+
+        </tbody>
+    </table>
+
+
+
+
+</div>
+
+

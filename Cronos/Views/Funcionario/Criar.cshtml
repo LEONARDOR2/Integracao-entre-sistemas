@@ -1,0 +1,64 @@
+﻿
+@model FuncionarioModel
+
+@{
+    ViewData["Title"] = " Cadastro de funcionário";
+}
+
+
+<div class="text-center">
+
+   
+
+    <h1 class="display-4">Cadastar funcionário</h1>
+
+    
+
+
+</div>
+
+
+<form asp-controller="Funcionario" asp-action="Criar" method="post"> 
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text"  asp-for="Nome" class="form-control"   placeholder="Digite o nome do funcionário">
+       @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o email do funcionário">
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="form-group">
+        <label for="pis">Pis</label>
+        <input type="text" asp-for="Pis" class="form-control" placeholder="Digite o pis do funcionário">
+        @Html.ValidationMessageFor(x => x.Pis)
+    </div>
+
+    <div class="form-group">
+        <label for="referencia">Referencia</label>
+        <input type="text" asp-for="Referencia" class="form-control" placeholder="Digite a referencia do funcionário">
+        @Html.ValidationMessageFor(x => x.Referencia)
+    </div>
+
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" asp-for="Telefone" class="form-control" placeholder="Digite o telefone do funcionário">
+        @Html.ValidationMessageFor(x => x.Telefone)
+    </div>
+     <br/>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block" >Adicionar</button>
+    </div>
+
+    <br />
+    <div class="d-grid gap-2">
+        <a class="btn btn-secondary btn-block" asp-controller="Cadastro" asp-action="Index" role="button">Voltar</a>
+
+    </div>
+</form>
+
+
+       
