@@ -37,6 +37,9 @@ namespace Cronos.Repositorio
             return funcionario;
         }
 
+        //Obtém todos os funcionários já existentes no banco de dados
+        //Filtra a coleção recebida, removendo os funcionários que já existem.
+        //Se houver novos funcionários, adiciona eles ao banco de dados e salva as alterações.
         public IEnumerable<FuncionarioModel> AdicionarConjunto(IEnumerable<FuncionarioModel> funcionarios)
         {
             IEnumerable<FuncionarioModel> funcionariosJaExistentes = BuscarTodos();

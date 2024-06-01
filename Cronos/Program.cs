@@ -19,11 +19,14 @@ namespace Cronos
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            //Configura o contexto do banco de dados
            builder.Services.AddDbContext<BancoContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
 
+            //  registra o repositório de funcionários
             builder.Services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
+
+
 
             builder.Services.AddSwaggerGen(c =>
            {

@@ -40,7 +40,7 @@ namespace Cronos.Repositorio
         public FuncionarioModel Adicionar(FuncionarioModel funcionario)
         {
             _bancoContext.Funcionarios.Add(funcionario);
-            _bancoContext.SaveChanges();
+            _bancoContext.SaveChanges(); //comita
             return funcionario;
         }
 

@@ -7,10 +7,14 @@ namespace idclass.Data;
 public class BancoContext : DbContext
 {
     public BancoContext(DbContextOptions<BancoContext> options) : base(options)
-    { }
+    {
+    
+    }
 
     public DbSet<FuncionarioModel> Funcionarios { get; set; }
 
+
+    // Configura a propriedade Id para não gerar valores automaticamente.
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<FuncionarioModel>(entity =>

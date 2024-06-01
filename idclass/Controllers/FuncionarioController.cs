@@ -140,6 +140,8 @@ namespace idclass.Controllers
             }
         }
 
+        // cria um conjunto de objetos FuncionarioModel.
+        // recebe uma coleção de FuncionarioModel do corpo de uma solicitação HTTP POST.
         [HttpPost("api/funcionarios")]
         public IActionResult CriarConjunto([FromBody] IEnumerable<FuncionarioModel> funcionarios)
         {

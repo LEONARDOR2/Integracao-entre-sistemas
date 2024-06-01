@@ -24,14 +24,14 @@ namespace Cronos.Controllers
         
         }
 
-       
+        //recupera uma lista de funcionários usando um repositório
+        //retorna essa lista para uma View
         [HttpGet]
         public IActionResult Index()
         {
          List<FuncionarioModel> funcionarios =  _funcionarioRepositorio.BuscarTodos();
 
-            // Json(funcionarios);
-            // return Json(funcionarios);
+           
             return View(funcionarios);
         }
 
