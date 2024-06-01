@@ -64,17 +64,7 @@ namespace Integração
 
 
 
-            //var client = new RestClient();
-            //var request = new RestRequest("https://localhost:7169/api/Funcionarios", Method.Get);
-
-            //RestResponse response = await client.ExecuteAsync(request);
-
-            //if (response.StatusCode == System.Net.HttpStatusCode.OK)
-
-            //    return JsonConvert.DeserializeObject<List<FuncionarioModel>>(response.Content);
-
-            //else
-            //    return null;
+         
         }
 
 
